@@ -7,3 +7,4 @@ data class Whitepaper(
 
 //all data classes are generated
 //now lets use the retrofit for this
+//lets work on crypto currency app
