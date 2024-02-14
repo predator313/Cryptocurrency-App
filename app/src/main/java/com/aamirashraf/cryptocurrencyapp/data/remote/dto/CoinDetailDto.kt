@@ -1,5 +1,6 @@
 package com.aamirashraf.cryptocurrencyapp.data.remote.dto
 
+import com.aamirashraf.cryptocurrencyapp.domain.model.CoinDetails
 import com.google.gson.annotations.SerializedName
 
 data class CoinDetailDto(
@@ -36,8 +37,20 @@ data class CoinDetailDto(
     val startedAt: String,
     val symbol: String,
     val tags: List<Tag>,
-    val team: List<Team>,
+    val team: List<TeamMember>,
     val type: String,
     @SerializedName("whitepaper")
     val whitePaper: Whitepaper
 )
+fun CoinDetailDto.toCoinDetail():CoinDetails{
+    return CoinDetails(
+        coinId = id,
+        name=name,
+        description=description,
+        symbol=symbol,
+        rank=rank,
+        isActive=isActive,
+        tags=tags.map { it.name },
+        team=team
+    )
+}

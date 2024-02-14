@@ -1,5 +1,6 @@
 package com.aamirashraf.cryptocurrencyapp.data.remote
 
+import com.aamirashraf.cryptocurrencyapp.data.remote.dto.CoinDetailDto
 import com.aamirashraf.cryptocurrencyapp.domain.model.Coin
 import retrofit2.http.GET
 import retrofit2.http.Path
@@ -13,5 +14,5 @@ interface CoinPaprikaApi {
 
     //get coins by id like bitcoin dogeCoin etc
     @GET("/v1/coins/{coinId}")
-    suspend fun getCoinById(@Path("coinId")coinId:String)
+    suspend fun getCoinById(@Path("coinId")coinId:String):CoinDetailDto
 }
