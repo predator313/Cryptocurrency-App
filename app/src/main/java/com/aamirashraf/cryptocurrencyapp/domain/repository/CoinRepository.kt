@@ -8,3 +8,4 @@ interface CoinRepository {
 
     suspend fun getCoinById(coinId:String):CoinDetailDto
 }
+//implement remaining functionality
