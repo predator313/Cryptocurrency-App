@@ -7,3 +7,4 @@ sealed class Resource<T>(val data: T? = null, val message: String? = null) {
 }
 //this is the resource generic type
 //lets implement the remaining
+//lets go
