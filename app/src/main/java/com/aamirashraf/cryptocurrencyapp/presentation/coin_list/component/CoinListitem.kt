@@ -34,4 +34,6 @@ fun CoinListItem(
             overflow = TextOverflow.Ellipsis  //if text is long than cut it off
             )
     }
+
+    //lets implement the remaining ones
 }
