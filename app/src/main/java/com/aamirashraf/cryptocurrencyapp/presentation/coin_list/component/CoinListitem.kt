@@ -38,4 +38,5 @@ fun CoinListItem(
     //lets implement the remaining ones
     //jetpack compose is the best things happen for android developer
     //in this weekend we finish this project
+    //lets do some practice in the jetpack-compose
 }
