@@ -11,13 +11,13 @@ import androidx.navigation.NavController
 @Composable
 fun CoinListScreen(
     navController: NavController,
-    viewModel: CoinListViewModel= androidx.hilt.navigation.compose.hiltViewModel()
+    viewModel: CoinListViewModel= hiltViewModel()
 ){
     val state = viewModel.state.value
-    androidx.compose.foundation.layout.Box(modifier = Modifier.fillMaxSize()) {
-        androidx.compose.foundation.lazy.LazyColumn(modifier = Modifier.fillMaxSize()) {
+    Box(modifier = Modifier.fillMaxSize()) {
+        LazyColumn(modifier = Modifier.fillMaxSize()) {
             items(state.coins){coin->
-                com.aamirashraf.cryptocurrencyapp.presentation.coin_list.component.CoinListItem(coin = coin,
+                CoinListItem(coin = coin,
                     onItemClick = {
                         navController.navigate(Screen.CointDetailScreen.route+ "/{coin.id}")
                     }
@@ -29,8 +29,8 @@ fun CoinListScreen(
 
         }
         if(state.error.isNotBlank()){
-            androidx.compose.material3.Text(text = state.error,
-                color = androidx.compose.material3.MaterialTheme.colorScheme.error,
+            Text(text = state.error,
+                color = MaterialTheme.colorScheme.error,
                 textAlign = androidx.compose.ui.text.style.TextAlign.Companion.Center,
                 modifier = Modifier.fillMaxWidth()
                     .padding(horizontal = 20.dp)
@@ -38,7 +38,7 @@ fun CoinListScreen(
                 )
         }
         if(state.isLoading){
-            androidx.compose.material3.CircularProgressIndicator(
+            CircularProgressIndicator(
                 modifier = Modifier.align(androidx.compose.ui.Alignment.Companion.Center)
             )
         }
